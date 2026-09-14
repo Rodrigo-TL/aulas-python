@@ -1,14 +1,3 @@
-# crie uma lista que ela armazene um numero x de funcionarios. Usando o while, adicione quantos funcionarios quiser em execução.
-
-# Com o for, voce irá imprimir duas listas:
-
-# uma lista com todos os funcionarios que receber]ao um aumento.
-
-# Outra lista, com todos os funcionarios que serão demitidos.
-
-# Voce irá decidir qual funcionario será dmitido ou receberá aumento pelo index do funcionario lista[]
-
-# Questão 1: Lista de Funcionários
 
 funcionarios = []
 funcionario = input("Digite o nome do funcionário (Enter para encerrar): ").strip()
