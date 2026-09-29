@@ -1,0 +1,7 @@
+RECIBO DO CARRINHO
+
+Cliente: rodrigo
+
+Produto: carro - R$ 100.00
+
+TOTAL: R$ 100.00

@@ -1,6 +1,0 @@
-RECIBO DO CARRINHO
-
-Produto: L R$6.00
-Produto: a R$14.00
-
-Total a pagar: 20.00
