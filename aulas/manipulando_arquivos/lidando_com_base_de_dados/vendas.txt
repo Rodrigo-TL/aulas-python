@@ -1,0 +1,4 @@
+rodrigo;carro;100.00
+celso;terreno;100.00
+celso;terreno;100.00
+rodrigo;carro;200.00
