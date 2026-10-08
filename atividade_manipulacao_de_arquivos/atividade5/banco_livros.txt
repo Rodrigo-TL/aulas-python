@@ -1,0 +1,31 @@
+id;nome;descricao;preco;em_estoque
+1;Dom Casmurro;Romance clássico de Machado de Assis.;39.90;12
+2;O Cortiço;Romance naturalista brasileiro.;44.90;20
+3;Grande Sertão Veredas;Narrativa épica do sertão.;59.90;8
+4;Memórias Póstumas de Brás Cubas;Romance de humor e crítica social.;36.90;17
+5;A Hora da Estrela;Obra de Clarice Lispector.;29.90;11
+6;Vidas Secas;Retrato da vida no sertão.;32.90;25
+7;Iracema;Romance indianista brasileiro.;27.90;14
+8;O Guarani;Aventura e identidade nacional.;31.90;19
+9;A Moreninha;Romance urbano brasileiro.;24.90;16
+10;Senhora;Romance de José de Alencar.;28.90;10
+11;Macunaíma;Rapsódia modernista brasileira.;35.90;22
+12;Triste Fim de Policarpo Quaresma;Sátira sobre o nacionalismo.;33.90;13
+13;Sagarana;Contos ambientados no sertão.;48.90;9
+14;Laços de Família;Contos de Clarice Lispector.;41.90;21
+15;Quarto de Despejo;Diário de Carolina Maria de Jesus.;38.90;6
+16;Ensaio Sobre a Cegueira;Romance de José Saramago.;52.90;18
+17;O Alquimista;Jornada de autoconhecimento.;45.90;30
+18;Cem Anos de Solidão;Saga de uma família colombiana.;64.90;7
+19;1984;Distopia sobre vigilância e poder.;39.90;15
+20;Admirável Mundo Novo;Distopia sobre tecnologia e controle.;42.90;12
+21;Crime e Castigo;Romance psicológico russo.;55.90;5
+22;Anna Kariênina;Clássico sobre amor e sociedade.;58.90;16
+23;O Pequeno Príncipe;Fábula sobre amizade e infância.;29.90;27
+24;Alice no País das Maravilhas;Fantasia sobre imaginação.;26.90;23
+25;Fahrenheit 451;Distopia sobre livros proibidos.;37.90;10
+26;O Velho e o Mar;Novela sobre perseverança.;30.90;14
+27;As Aventuras de Tom Sawyer;Aventura juvenil clássica.;34.90;19
+28;A Metamorfose;Novela sobre transformação e isolamento.;25.90;8
+29;O Processo;Romance sobre burocracia e culpa.;46.90;11
+30;Persépolis;Graphic novel autobiográfica.;49.90;13

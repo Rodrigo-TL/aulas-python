@@ -1,0 +1,247 @@
+[
+    {
+        "id": 1,
+        "nome": "Dom Casmurro",
+        "descricao": "Romance clássico de Machado de Assis.",
+        "preco": 39.9,
+        "em_estoque": 12
+    },
+    {
+        "id": 2,
+        "nome": "O Cortiço",
+        "descricao": "Romance naturalista brasileiro.",
+        "preco": 44.9,
+        "em_estoque": 20
+    },
+    {
+        "id": 3,
+        "nome": "Grande Sertão Veredas",
+        "descricao": "Narrativa épica do sertão.",
+        "preco": 59.9,
+        "em_estoque": 8
+    },
+    {
+        "id": 4,
+        "nome": "Memórias Póstumas de Brás Cubas",
+        "descricao": "Romance de humor e crítica social.",
+        "preco": 36.9,
+        "em_estoque": 17
+    },
+    {
+        "id": 5,
+        "nome": "A Hora da Estrela",
+        "descricao": "Obra de Clarice Lispector.",
+        "preco": 29.9,
+        "em_estoque": 11
+    },
+    {
+        "id": 6,
+        "nome": "Vidas Secas",
+        "descricao": "Retrato da vida no sertão.",
+        "preco": 32.9,
+        "em_estoque": 25
+    },
+    {
+        "id": 7,
+        "nome": "Iracema",
+        "descricao": "Romance indianista brasileiro.",
+        "preco": 27.9,
+        "em_estoque": 14
+    },
+    {
+        "id": 8,
+        "nome": "O Guarani",
+        "descricao": "Aventura e identidade nacional.",
+        "preco": 31.9,
+        "em_estoque": 19
+    },
+    {
+        "id": 9,
+        "nome": "A Moreninha",
+        "descricao": "Romance urbano brasileiro.",
+        "preco": 24.9,
+        "em_estoque": 16
+    },
+    {
+        "id": 10,
+        "nome": "Senhora",
+        "descricao": "Romance de José de Alencar.",
+        "preco": 28.9,
+        "em_estoque": 10
+    },
+    {
+        "id": 11,
+        "nome": "Macunaíma",
+        "descricao": "Rapsódia modernista brasileira.",
+        "preco": 35.9,
+        "em_estoque": 22
+    },
+    {
+        "id": 12,
+        "nome": "Triste Fim de Policarpo Quaresma",
+        "descricao": "Sátira sobre o nacionalismo.",
+        "preco": 33.9,
+        "em_estoque": 13
+    },
+    {
+        "id": 13,
+        "nome": "Sagarana",
+        "descricao": "Contos ambientados no sertão.",
+        "preco": 48.9,
+        "em_estoque": 9
+    },
+    {
+        "id": 14,
+        "nome": "Laços de Família",
+        "descricao": "Contos de Clarice Lispector.",
+        "preco": 41.9,
+        "em_estoque": 21
+    },
+    {
+        "id": 15,
+        "nome": "Quarto de Despejo",
+        "descricao": "Diário de Carolina Maria de Jesus.",
+        "preco": 38.9,
+        "em_estoque": 6
+    },
+    {
+        "id": 16,
+        "nome": "Ensaio Sobre a Cegueira",
+        "descricao": "Romance de José Saramago.",
+        "preco": 52.9,
+        "em_estoque": 18
+    },
+    {
+        "id": 17,
+        "nome": "O Alquimista",
+        "descricao": "Jornada de autoconhecimento.",
+        "preco": 45.9,
+        "em_estoque": 30
+    },
+    {
+        "id": 18,
+        "nome": "Cem Anos de Solidão",
+        "descricao": "Saga de uma família colombiana.",
+        "preco": 64.9,
+        "em_estoque": 7
+    },
+    {
+        "id": 19,
+        "nome": "1984",
+        "descricao": "Distopia sobre vigilância e poder.",
+        "preco": 39.9,
+        "em_estoque": 15
+    },
+    {
+        "id": 20,
+        "nome": "Admirável Mundo Novo",
+        "descricao": "Distopia sobre tecnologia e controle.",
+        "preco": 42.9,
+        "em_estoque": 12
+    },
+    {
+        "id": 21,
+        "nome": "Crime e Castigo",
+        "descricao": "Romance psicológico russo.",
+        "preco": 55.9,
+        "em_estoque": 5
+    },
+    {
+        "id": 22,
+        "nome": "Anna Kariênina",
+        "descricao": "Clássico sobre amor e sociedade.",
+        "preco": 58.9,
+        "em_estoque": 16
+    },
+    {
+        "id": 23,
+        "nome": "O Pequeno Príncipe",
+        "descricao": "Fábula sobre amizade e infância.",
+        "preco": 29.9,
+        "em_estoque": 27
+    },
+    {
+        "id": 24,
+        "nome": "Alice no País das Maravilhas",
+        "descricao": "Fantasia sobre imaginação.",
+        "preco": 26.9,
+        "em_estoque": 23
+    },
+    {
+        "id": 25,
+        "nome": "Fahrenheit 451",
+        "descricao": "Distopia sobre livros proibidos.",
+        "preco": 37.9,
+        "em_estoque": 10
+    },
+    {
+        "id": 26,
+        "nome": "O Velho e o Mar",
+        "descricao": "Novela sobre perseverança.",
+        "preco": 30.9,
+        "em_estoque": 14
+    },
+    {
+        "id": 27,
+        "nome": "As Aventuras de Tom Sawyer",
+        "descricao": "Aventura juvenil clássica.",
+        "preco": 34.9,
+        "em_estoque": 19
+    },
+    {
+        "id": 28,
+        "nome": "A Metamorfose",
+        "descricao": "Novela sobre transformação e isolamento.",
+        "preco": 25.9,
+        "em_estoque": 8
+    },
+    {
+        "id": 29,
+        "nome": "O Processo",
+        "descricao": "Romance sobre burocracia e culpa.",
+        "preco": 46.9,
+        "em_estoque": 11
+    },
+    {
+        "id": 30,
+        "nome": "Persépolis",
+        "descricao": "Graphic novel autobiográfica.",
+        "preco": 49.9,
+        "em_estoque": 13
+    },
+    {
+        "id": 31,
+        "nome": "O Nome do Vento",
+        "descricao": "Fantasia sobre um músico lendário.",
+        "preco": 59.9,
+        "em_estoque": 12
+    },
+    {
+        "id": 32,
+        "nome": "A Revolução dos Bichos",
+        "descricao": "Sátira política em forma de fábula.",
+        "preco": 34.9,
+        "em_estoque": 18
+    },
+    {
+        "id": 33,
+        "nome": "O Hobbit",
+        "descricao": "A aventura de Bilbo Bolseiro.",
+        "preco": 49.9,
+        "em_estoque": 9
+    },
+    {
+        "id": 34,
+        "nome": "Capitães da Areia",
+        "descricao": "Romance brasileiro.",
+        "preco": 42.0,
+        "em_estoque": 14
+    },
+    {
+        "id": 35,
+        "nome": "A Menina que Roubava Livros",
+        "descricao": "Narrativa sobre livros e sobrevivência.",
+        "preco": 54.9,
+        "em_estoque": 7
+    }
+]
