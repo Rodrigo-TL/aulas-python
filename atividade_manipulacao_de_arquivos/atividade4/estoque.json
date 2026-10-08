@@ -1,0 +1,25 @@
+{
+    "nome": "TechStore",
+    "produtos": [
+        {
+            "nome": "Teclado",
+            "preco": 135.0,
+            "quantidade": 12
+        },
+        {
+            "nome": "Mouse",
+            "preco": 80.0,
+            "quantidade": 20
+        },
+        {
+            "nome": "Monitor",
+            "preco": 899.9,
+            "quantidade": 6
+        },
+        {
+            "nome": "Fone de ouvido",
+            "preco": 199.9,
+            "quantidade": 10
+        }
+    ]
+}
