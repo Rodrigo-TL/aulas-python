@@ -1,0 +1,16 @@
+import requests
+
+link = 'http://192.168.205.100:8080/usuarios'
+resposta = requests.get(link)
+
+print(resposta.json())
+
+#chaves aceitas na API da aula: 'nome', 'email'
+
+meus_dados = {
+    'nome': 'Rodrigo',
+    'email': 'rodrigo@email.com',
+}
+
+envio = requests.post(link, json=meus_dados)
+print(f'STATUS ENVIO DE DADOS {envio}')
