@@ -43,5 +43,50 @@
         "gia": "1004",
         "ddd": "11",
         "siafi": "7107"
+    },
+    {
+        "cep": "30140-071",
+        "logradouro": "Rua dos Aimorés",
+        "complemento": "de 971/972 a 1399/1400",
+        "unidade": "",
+        "bairro": "Boa Viagem",
+        "localidade": "Belo Horizonte",
+        "uf": "MG",
+        "estado": "Minas Gerais",
+        "regiao": "Sudeste",
+        "ibge": "3106200",
+        "gia": "",
+        "ddd": "31",
+        "siafi": "4123"
+    },
+    {
+        "cep": "30140-071",
+        "logradouro": "Rua dos Aimorés",
+        "complemento": "de 971/972 a 1399/1400",
+        "unidade": "",
+        "bairro": "Boa Viagem",
+        "localidade": "Belo Horizonte",
+        "uf": "MG",
+        "estado": "Minas Gerais",
+        "regiao": "Sudeste",
+        "ibge": "3106200",
+        "gia": "",
+        "ddd": "31",
+        "siafi": "4123"
+    },
+    {
+        "cep": "69005-070",
+        "logradouro": "Avenida Floriano Peixoto",
+        "complemento": "",
+        "unidade": "",
+        "bairro": "Centro",
+        "localidade": "Manaus",
+        "uf": "AM",
+        "estado": "Amazonas",
+        "regiao": "Norte",
+        "ibge": "1302603",
+        "gia": "",
+        "ddd": "92",
+        "siafi": "0255"
     }
 ]
