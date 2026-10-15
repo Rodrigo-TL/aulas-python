@@ -1,155 +1,187 @@
+# Importa as bibliotecas usadas no programa
+import requests
 import json
 
-import requests
 
-
+# Endereço da API de funcionários
 link_funcionarios = "http://192.168.205.100:8080/funcionarios"
+
+# Nome do arquivo que será criado
 arquivo_saida = "dados_funcionarios_atualizados.json"
 
 
+# Verifica se um valor está vazio
 def campo_vazio(valor):
     return valor is None or (
         isinstance(valor, str) and valor.strip() == ""
     )
 
 
+# Consulta e valida o CEP na API ViaCEP
 def consultar_cep(cep):
-    """Consulta o CEP e aceita somente retornos com cidade e estado."""
+    # Remove espaços e hífen do CEP
     cep = cep.strip().replace("-", "")
 
+    # Verifica se o CEP possui oito números
     if not cep.isdigit() or len(cep) != 8:
-        raise ValueError("O CEP deve conter exatamente 8 números.")
+        raise ValueError(
+            "O CEP deve conter exatamente 8 números."
+        )
 
+    # Monta o endereço da consulta
     link_cep = f"https://viacep.com.br/ws/{cep}/json/"
-    resposta = requests.get(link_cep, timeout=10)
-    resposta.raise_for_status()
-    endereco = resposta.json()
 
+    # Faz a requisição para a API
+    resposta_cep = requests.get(link_cep)
+
+    # Verifica se a requisição foi realizada com sucesso
+    if resposta_cep.status_code != 200:
+        raise ValueError(
+            "Não foi possível consultar o CEP."
+        )
+
+    # Converte a resposta para um dicionário
+    endereco = resposta_cep.json()
+
+    # Verifica se o CEP existe e possui cidade e estado
     if (
         endereco.get("erro")
-        or not endereco.get("localidade")
-        or not endereco.get("uf")
+        or campo_vazio(endereco.get("localidade"))
+        or campo_vazio(endereco.get("uf"))
     ):
         raise ValueError(
             "O CEP não foi encontrado ou não possui endereço válido."
         )
 
+    # Retorna o CEP e os dados do endereço
     return cep, endereco
 
 
+# Solicita um CEP até que o usuário informe um válido
 def solicitar_cep(nome):
-    """Solicita novamente até que o usuário informe um CEP válido."""
     while True:
         cep_digitado = input(
             f"Digite um CEP válido para {nome}: "
         )
 
         try:
+            # Consulta o CEP informado
             return consultar_cep(cep_digitado)
-        except (ValueError, requests.RequestException) as erro:
+
+        except ValueError as erro:
+            # Mostra o motivo pelo qual o CEP foi rejeitado
             print(f"CEP inválido: {erro}")
 
 
+# Preenche cidade e estado quando esses campos estão vazios
 def preencher_dados_vazios(funcionario, endereco):
-    """Preenche somente os campos que estão vazios."""
+    # Seleciona os dados necessários do endereço
     dados_endereco = {
         "cidade": endereco.get("localidade"),
         "estado": endereco.get("uf"),
-        "logradouro": endereco.get("logradouro"),
-        "bairro": endereco.get("bairro"),
-        "complemento": endereco.get("complemento"),
     }
 
+    # Percorre os campos de endereço
     for campo, valor in dados_endereco.items():
-        if campo in funcionario and campo_vazio(funcionario[campo]):
+        # Altera somente os campos vazios
+        if (
+            campo in funcionario
+            and campo_vazio(funcionario[campo])
+            and not campo_vazio(valor)
+        ):
             funcionario[campo] = valor
 
 
-def atualizar_funcionarios():
-    resposta = requests.get(link_funcionarios, timeout=10)
-    resposta.raise_for_status()
+# Busca os dados dos funcionários
+resposta = requests.get(link_funcionarios)
+
+# Verifica se a requisição foi realizada com sucesso
+if resposta.status_code != 200:
+    print("Não foi possível buscar os funcionários.")
+
+else:
+    # Converte a resposta para uma lista de funcionários
     lista_funcionarios = resposta.json()
 
-    if not isinstance(lista_funcionarios, list):
-        raise ValueError(
-            "A API deve retornar uma lista de funcionários."
-        )
+    print(
+        "--- LISTA DE FUNCIONÁRIOS COM DADOS VAZIOS ---\n"
+    )
 
-    print("--- FUNCIONÁRIOS COM DADOS DE ENDEREÇO VAZIOS ---\n")
-
+    # Percorre todos os funcionários
     for funcionario in lista_funcionarios:
         nome = funcionario.get("nome", "funcionário")
         cep = funcionario.get("cep")
 
-        campos_endereco = (
-            "cidade",
-            "estado",
-            "logradouro",
-            "bairro",
+        # Verifica se cidade e estado estão vazios
+        cidade_vazia = campo_vazio(
+            funcionario.get("cidade")
         )
 
-        possui_dado_vazio = any(
-            campo_vazio(funcionario.get(campo))
-            for campo in campos_endereco
+        estado_vazio = campo_vazio(
+            funcionario.get("estado")
         )
 
-        if not campo_vazio(cep) and not possui_dado_vazio:
-            continue
+        # Processa funcionários que possuem CEP vazio
+        # ou cidade/estado vazios.
+        if campo_vazio(cep) or cidade_vazia or estado_vazio:
 
-        if campo_vazio(cep):
-            print(
-                f"O funcionário(a) {nome} não tem CEP cadastrado."
+            # Solicita um CEP quando o funcionário não possui um
+            if campo_vazio(cep):
+                print(
+                    f"O funcionário(a) {nome} "
+                    "não tem CEP cadastrado."
+                )
+
+                cep, endereco = solicitar_cep(nome)
+
+            else:
+                try:
+                    # Consulta o CEP que já está cadastrado
+                    cep, endereco = consultar_cep(str(cep))
+
+                except ValueError as erro:
+                    # Informa que o CEP cadastrado é inválido
+                    print(
+                        f"CEP inválido para {nome}: {erro}"
+                    )
+
+                    print(
+                        f"Informe um novo CEP válido para {nome}."
+                    )
+
+                    # Solicita um novo CEP válido
+                    cep, endereco = solicitar_cep(nome)
+
+            # Salva o CEP validado no funcionário
+            funcionario["cep"] = cep
+
+            # Altera somente cidade e estado vazios
+            preencher_dados_vazios(
+                funcionario,
+                endereco
             )
 
-            cep, endereco = solicitar_cep(nome)
-            funcionario["cep"] = cep
-            preencher_dados_vazios(funcionario, endereco)
-            continue
+    print("\n--- BASE DE DADOS ATUALIZADA ---\n")
 
-        try:
-            cep, endereco = consultar_cep(str(cep))
-            funcionario["cep"] = cep
-            preencher_dados_vazios(funcionario, endereco)
+    # Exibe a lista atualizada
+    for funcionario in lista_funcionarios:
+        print(funcionario)
 
-        except (ValueError, requests.RequestException) as erro:
-            print(
-                f"Não foi possível consultar o CEP de {nome}: {erro}"
-            )
-
-    return lista_funcionarios
-
-
-def salvar_dados(lista_funcionarios):
-    with open(arquivo_saida, "w", encoding="utf-8") as arquivo:
+    # Abre o arquivo para salvar os dados
+    with open(
+        arquivo_saida,
+        "w",
+        encoding="utf-8"
+    ) as arquivo:
+        # Salva a lista em formato JSON
         json.dump(
             lista_funcionarios,
             arquivo,
             indent=4,
-            ensure_ascii=False,
+            ensure_ascii=False
         )
 
-
-def main():
-    try:
-        lista_funcionarios = atualizar_funcionarios()
-
-        print("\n--- BASE DE DADOS ATUALIZADA ---\n")
-
-        for funcionario in lista_funcionarios:
-            print(funcionario)
-
-        salvar_dados(lista_funcionarios)
-
-        print(f"\nArquivo salvo como: {arquivo_saida}")
-
-    except (
-        OSError,
-        ValueError,
-        requests.RequestException,
-        json.JSONDecodeError,
-    ) as erro:
-        print(f"Não foi possível atualizar os dados: {erro}")
-
-
-if __name__ == "__main__":
-    main()
+    # Informa o nome do arquivo criado
+    print(
+        f"\nArquivo salvo como: {arquivo_saida}"
+    )
